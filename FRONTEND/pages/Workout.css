@@ -1,0 +1,232 @@
+.workout-container {
+  padding: 2rem 0;
+  min-height: calc(100vh - 60px);
+}
+
+.workout-header {
+  margin-bottom: 2rem;
+}
+
+.workout-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+/* Progress Bar */
+.progress-bar {
+  background: var(--secondary-bg);
+  border-radius: 12px;
+  height: 8px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, var(--accent), #00cc6a);
+  height: 100%;
+  border-radius: 12px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: -25px;
+  right: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Exercise List */
+.exercises-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.exercise-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.exercise-card.completed {
+  border-color: var(--accent);
+  background: rgba(0, 255, 136, 0.05);
+}
+
+.exercise-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.exercise-info h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.exercise-target {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.complete-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.complete-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.complete-btn.completed {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--primary-bg);
+}
+
+/* Exercise Inputs */
+.exercise-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.input-group .input {
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Workout Actions */
+.workout-actions {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.save-btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* No Workout */
+.no-workout {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.no-workout h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.no-workout p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Loading Container */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1rem;
+}
+
+.loading-container p {
+  color: var(--text-secondary);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .workout-container {
+    padding: 1rem 0;
+  }
+  
+  .workout-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .exercise-card {
+    padding: 1rem;
+  }
+  
+  .exercise-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .exercise-inputs {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .complete-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .save-btn {
+    width: 100%;
+    padding: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .exercise-inputs {
+    grid-template-columns: 1fr;
+  }
+  
+  .no-workout {
+    padding: 2rem 1rem;
+  }
+  
+  .no-workout h1 {
+    font-size: 1.5rem;
+  }
+}

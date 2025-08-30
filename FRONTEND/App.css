@@ -1,0 +1,41 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--primary-bg);
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 60px; /* Space for fixed navbar */
+}
+
+/* Mobile-first responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 70px;
+  }
+}
+
+/* Page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s, transform 0.3s;
+}
